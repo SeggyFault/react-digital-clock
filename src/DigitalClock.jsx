@@ -20,8 +20,12 @@ function DigitalClock() {
     let seconds = time.getSeconds();
     let meridiem = hours >=12 ? "PM" : "AM";
 
-    return `${hours}:${minutes}:${seconds} ${meridiem}`;
+    return `${addZero(hours)}:${addZero(minutes)}:${addZero(seconds)} ${meridiem}`;
   }
+
+  function addZero(number) {
+    return (number < 10 ? "0" : "") + number;
+  };
 
   return(
     <div className="h-screen flex justify-center items-center">
